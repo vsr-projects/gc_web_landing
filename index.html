@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+  <meta name="description" content="Babun is a beautiful website template designed for Business & Consulting websites.">
+  <meta property="og:site_name" content="Babun">
+  <meta property="og:url" content="https://creativegigstf.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Babun - Business & Consulting HTML5 Template">
+  <meta name='og:image' content='images/assets/ogg.png'>
+  <!-- For IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- For Resposive Device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- For Window Tab Color -->
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#1A4137">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#1A4137">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1A4137">
+  <title>Gencash</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="56x56" href="images/fav-icon/icon.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="all">
+  <!-- Main style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.min.css" media="all">
+  <!-- responsive style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/responsive.css" media="all">
+
+  <style>
+    :root {
+      --gc-primary: #0055A4;
+      --gc-secondary: #FFD700;
+      --gc-accent: #e6fd5a;
+      --gc-text-dark: #2D3748;
+      --gc-text-light: #FFFFFF;
+    }
+
+    /* Shared Shiny Heading Style */
+    .title-one.shiny h2,
+    .title-three.shiny h2,
+    .title-two.shiny h2 {
+      color: #000;
+      /* pure black text */
+      text-shadow:
+        0 0 5px rgba(0, 0, 0, 0.3),
+        /* soft black glow */
+        0 1px 0 rgba(255, 255, 255, 0.2);
+      /* tiny white edge highlight */
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .title-one.shiny h2::before,
+    .title-three.shiny h2::before,
+    .title-two.shiny h2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: skewX(-25deg);
+      animation: shine-sweep 2s infinite;
+    }
+
+    @keyframes shine-sweep {
+      to {
+        left: 125%;
+      }
+    }
+
+    /* Added style for the KYC section to prevent overflow and background issues */
+    #kyc {
+      overflow: hidden;
+    }
+
+    .partner-logo-one {
+    overflow: hidden;             /* hide any marquee overflow */
+    }
+    .partner-slider-one {
+      display: flex;
+    }
+    .partner-slider-one .item {
+      flex: 0 0 150px;              /* fixed width */
+      padding: 0 15px;
+      box-sizing: border-box;
+      overflow: hidden;             /* clip child when it scales */
+      position: relative;           /* for z-index context */
+    }
+    .partner-slider-one .partner-logo {
+      display: block;
+      max-height: 80px;             /* cap height */
+      width: auto;
+      margin: 0 auto;
+      object-fit: contain;          /* ensure full image shows */
+      transition: transform 0.3s ease;
+    }
+    .partner-slider-one .partner-logo:hover {
+      transform: scale(1.1);        /* subtle grow */
+    }
+    
+    .title-one.shiny h2 {
+        color: #000;
+        text-shadow: 0 0 5px rgba(0,0,0,0.3), 0 1px 0 rgba(255,255,255,0.2);
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .title-one.shiny h2::before {
+        content: "";
+        position: absolute;
+        top: 0; left: -75%;
+        width: 50%; height: 100%;
+        background: rgba(255,255,255,0.3);
+        transform: skewX(-25deg);
+        animation: shine-sweep 2s infinite;
+      }
+      @keyframes shine-sweep { to { left: 125%; } }
+
+      /* constrain to 3 cards */
+      .services-track-wrapper {
+        overflow-x: hidden; /* hide beyond 3 cards */
+        position: relative;
+      }
+      .services-track {
+        display: flex;
+        gap: 1.5rem;
+        animation: services-auto-scroll 8s linear infinite;
+      }
+      /* Each .col shows its bootstrap width */
+      .services-track .col-md-4 {
+        flex: 0 0 auto;
+        width: calc((100% - 3rem) / 3); /* show 3 cards exactly, adjust if gap changes */
+      }
+
+      /* auto-scroll: move left to show cards 4 & 5, then reset */
+      @keyframes services-auto-scroll {
+        0%   { transform: translateX(0); }
+        50%  { transform: translateX(calc(-1 * (100% / 3))); }
+        100% { transform: translateX(0); }
+      }
+
+      /* — Wrapper hides overflow so only 3 cards show — */
+      .kyc-track-wrapper {
+        overflow-x: hidden;
+        position: relative;
+      }
+
+      /* — Flex-row of all 5 cards, auto-scrolls left & back — */
+      .kyc-track {
+        display: flex;
+        gap: 1.5rem;              /* matches gx-xxl-5 */
+        animation: kyc-auto-scroll 8s linear infinite;
+        flex-wrap: nowrap;
+      }
+
+      /* — Force each card to a fixed third of the viewport minus gaps — */
+      .kyc-track .col-md-4 {
+        flex: 0 0 auto;
+        width: calc((100% - 3rem) / 3); /* 3 cards visible, 2 gaps of 1.5rem */
+      }
+
+      /* — Auto-scroll keyframes: shift by one card slot then reset — */
+      @keyframes kyc-auto-scroll {
+        0%   { transform: translateX(0); }
+        50%  { transform: translateX(calc(-1 * (100% / 3))); }
+        100% { transform: translateX(0); }
+      }
+  </style>
+
+
+  <!-- Fix Internet Explorer ______________________________________-->
+  <!--[if lt IE 9]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="vendor/html5shiv.js"></script>
+			<script src="vendor/respond.js"></script>
+		<![endif]-->
+
+  <!-- GSAP and ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+</head>
+
+<body>
+  <div class="main-page-wrapper">
+    <!-- ===================================================
+				Loading Transition (Commented Out)
+			==================================================== -->
+    <!-- <div id="preloader">
+			<div id="ctn-preloader" class="ctn-preloader">
+				<div class="icon"><img src="images/loader.svg" alt="" class="m-auto d-block" width="60"></div>
+				<div class="txt-loading">
+					<span data-text-preloader="B" class="letters-loading">
+						B
+					</span>
+					<span data-text-preloader="a" class="letters-loading">
+						a
+					</span>
+					<span data-text-preloader="b" class="letters-loading">
+						b
+					</span>
+					<span data-text-preloader="u" class="letters-loading">
+						u
+					</span>
+					<span data-text-preloader="n" class="letters-loading">
+						n
+					</span>
+				</div>
+			</div>
+		</div> -->
+
+
+    <!-- =============================================
+				Theme Main Menu
+		============================================== -->
+    <header class="theme-main-menu menu-overlay menu-style-four sticky-menu" style="background-color: #1e80c2;">
+      <div class="inner-content position-relative">
+        <div class="top-header">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="logo order-lg-0">
+              <a href="index.html">
+                <img src="images/gc-logo.png" alt="GenCash logo" class="site-logo" style="width: 200px;">
+              </a>
+            </div>
+            <!-- logo -->
+            <div class="right-widget d-none d-md-block ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
+              <a href="contact.html" class="btn-twelve tran3s">Get Started</a>
+            </div>
+            <!-- /.right-widget-->
+            <nav class="navbar navbar-expand-lg p0 order-lg-2">
+              <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                  <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#kyc">KYC</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#clientele">Clientele</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                  <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <!-- /.top-header-->
+      </div>
+      <!-- /.inner-content -->
+    </header>
+    <!-- /.theme-main-menu -->
+
+    <!-- =============================================
+			Hero Banner Section
+		============================================== -->
+    <div class="hero-banner-four pt-150 sm-pt-130 pb-225 lg-pb-150 xs-pb-100 position-relative snap-section" id="hero">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-xl-9 col-md-8">
+            <!-- ensure text sits above decorative layers -->
+            <div style="position: relative; z-index: 10;">
+              <h3 class="hero-heading text-white text-xl position-relative wow fadeInUp"
+                style="font-size: 70px; line-height: 1.2; margin-bottom: 1rem;">
+                Pioneering the Next Era <span style="color: var(--gc-accent);">of Digital Payment</span>
+              </h3>
+              <div class="row">
+                <div class="col-xl-8 col-lg-9">
+                  <p class="text-xl text-white pt-40 md-pt-20 pb-35 md-pb-30 wow fadeInUp" data-wow-delay="0.1s"
+                    style="font-size: 1.125rem; max-width: 500px;">
+                    Empowering individuals, SMEs, and enterprises nationwide with smart financial technology.
+                  </p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3 wow fadeInUp" data-wow-delay="0.2s">
+                <a href="#services" class="btn-twelve tran3s" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
+                  Explore Services
+                </a>
+                <a href="contact.html" class="btn btn-outline-light"
+                  style="padding: 0.75rem 1.5rem; border: 2px solid #fff; font-weight: 600;">
+                  Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="media-wrapper wow fadeInUp">
+        <img src="images/lazy.svg" data-src="images/assets/screen_13.png" alt="" class="lazy-img w-100">
+      </div>
+
+      <img src="images/lazy.svg" data-src="images/shape/shape_14.svg" alt="" class="lazy-img shapes shape_01">
+      <img src="images/lazy.svg" data-src="images/assets/screen_21.svg" alt="" class="lazy-img shapes shape_02 wow fadeInUp">
+    </div>
+    <!-- /.hero-banner-four -->
+
+    <section id="services" class="services-section">
+      <div class="container">
+        <!-- Title (identical to Service Benefits) -->
+        <div class="row align-items-center">
+          <div class="col-xl-8 col-lg-9 m-auto pt-40 wow fadeInUp">
+            <div class="title-one text-center mb-50 lg-mb-20 shiny">
+              <h2>Our Services</h2>
+              <p class="text-muted">Comprehensive Suite of Services</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrollable track: flex-nowrap, shows 3 cards, scroll to see cards 4 & 5 -->
+        <div class="row gx-xxl-5 justify-content-start services-track-wrapper">
+          <div class="services-track">
+            <!-- Card 1 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/prepaid_cards.png" alt="Prepaid Cards">
+                </div>
+                <h4 class="fw-bold mb-3">Prepaid Cards</h4>
+                <p class="mb-4">Issue and manage branded prepaid cards with real-time controls and reporting.</p>
+                
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/api_for_developers.png" alt="API For Developers">
+                </div>
+                <h4 class="fw-bold mb-3">API For Developers</h4>
+                <p class="mb-4">Integrate our payment APIs for seamless, secure transactions in your own apps.</p>
+                
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/merchant_aquisition_platform.png" alt="Merchant Acquisition">
+                </div>
+                <h4 class="fw-bold mb-3">Merchant Acquisition</h4>
+                <p class="mb-4">Onboard merchants quickly with our intuitive acquisition and underwriting tools.</p>
+                
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/gencash_payout_links.png" alt="Payout Links">
+                </div>
+                <h4 class="fw-bold mb-3">Payout Links</h4>
+                <p class="mb-4">Generate secure payout links for instant vendor and supplier payments.</p>
+                
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/payment_collection.png" alt="Payment Collection">
+                </div>
+                <h4 class="fw-bold mb-3">Payment Collection</h4>
+                <p class="mb-4">Collect payments online via UPI, cards, wallets and more through a single integration.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =============================================
+			Service Benefits Section
+		============================================== -->
+
+    <div class="block-feature-four position-relative mt-150 lg-mt-80 pb-150 lg-pb-80 snap-section" id="benefits">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-8 col-lg-9 m-auto wow fadeInUp">
+            <div class="title-one text-center mb-50 lg-mb-20 shiny">
+              <h2>Service Benefits</h2>
+              <p class="text-muted">Comprehensive Suite of Services</p>
+            </div>
+          </div>
+        </div>
+        <!-- Benefit cards -->
+        <div class="row gx-xxl-5 justify-content-center">
+          <div class="col-md-6 col-lg-4 d-flex wow fadeInUp">
+            <div class="card-style-six text-center vstack tran3s w-100 mt-30">
+              <div class="icon m-auto mb-4">
+                <img src="images/increasedefficiency.svg" alt="Increased Efficiency" class="benefit-icon">
+              </div>
+              <h4 class="fw-bold mb-3">Increased Efficiency</h4>
+              <p class="mb-4">
+                Enhance efficiency with FiatPe. Simplify your workflow with our streamlined solutions.
+              </p>
+              <a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link">
+                <img src="images/icon/icon_09.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.1s">
+            <div class="card-style-six text-center vstack tran3s w-100 mt-30">
+              <div class="icon m-auto mb-4">
+                <img src="images/reducemanualwork.svg" alt="Reduced Manual Work" class="benefit-icon">
+              </div>
+              <h4 class="fw-bold mb-3">Reduced Manual Work</h4>
+              <p class="mb-4">
+                Cut down on manual work with FiatPe’s automated solutions. Streamline your operations effortlessly.
+              </p>
+              <a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link">
+                <img src="images/icon/icon_09.svg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 d-flex wow fadeInUp" data-wow-delay="0.2s">
+            <div class="card-style-six text-center vstack tran3s w-100 mt-30">
+              <div class="icon m-auto mb-4">
+                <img src="images/improvecashflowmanagement.svg" alt="Improved Cash Flow Management" class="benefit-icon">
+              </div>
+              <h4 class="fw-bold mb-3">Improved Cash Flow Management</h4>
+              <p class="mb-4">
+                Optimize cash flow management with FiatPe. Empowering businesses with smarter financial solutions.
+              </p>
+              <a href="service-v2.html" class="arrow-btn tran3s m-auto stretched-link">
+                <img src="images/icon/icon_09.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative shapes -->
+      <img src="images/shape/shape_05.svg" alt="" class="lazy-img shapes shape_01">
+      <img src="images/shape/shape_06.svg" alt="" class="lazy-img shapes shape_02">
+    </div>
+    <!-- /.block-feature-four -->
+
+    <!-- =============================================
+        Secure & Compliant KYC & KYB Solution (3-up + auto-scroll)
+    =============================================== -->
+    <section id="kyc" class="block-feature-two position-relative mt-150 lg-mt-80 pb-150 lg-pb-80" style="background-color:#fff;">
+      <div class="container">
+        <!-- Title (same shiny style as Services) -->
+        <div class="row align-items-center">
+          <div class="col-xl-8 col-lg-9 m-auto wow fadeInUp">
+            <div class="title-one shiny text-center mb-10 lg-mb-10">
+              <h2>Secure and compliant KYC &amp; KYB Solution</h2>
+              <p class="text-muted">
+                Streamline the process of customer verification while adhering to regulatory standards,
+                providing a secure experience for your business and customers
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Viewport: shows 3 cards -->
+        <div class="kyc-track-wrapper position-relative overflow-hidden">
+          <div class="kyc-track d-flex gx-xxl-5">
+            <!-- Card 1 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp mt-3">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/financialverification.svg" alt="Financial Verification">
+                </div>
+                <h5 class="fw-bold mb-2">Financial Verification</h5>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp mt-3" data-wow-delay="0.1s">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/individualverification.svg" alt="Individual Verification">
+                </div>
+                <h5 class="fw-bold mb-2">Individual Verification</h5>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp mt-3" data-wow-delay="0.2s">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/businessverification.svg" alt="Business Verification">
+                </div>
+                <h5 class="fw-bold mb-2">Business Verification</h5>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp mt-3" data-wow-delay="0.3s">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/geointeligence.svg" alt="Geo Intelligence">
+                </div>
+                <h5 class="fw-bold mb-2">Geo Intelligence</h5>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-md-4 col-lg-4 d-flex wow fadeInUp mt-3" data-wow-delay="0.4s">
+              <div class="card-style-six text-center vstack tran3s w-100">
+                <div class="icon m-auto mb-4">
+                  <img src="images/ai&amp;ml.svg" alt="AI & ML">
+                </div>
+                <h5 class="fw-bold mb-2">AI &amp; ML</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =============================================
+		    UPI Switch Diagram Section
+		============================================== -->
+    <section style="background:#052d4e; color:#fff; padding:4rem 0; font-family:sans-serif;" class="snap-section">
+      <div style="
+          max-width:1000px;
+          margin:0 auto;
+          padding:0 1rem;
+          display:grid;
+          grid-template-columns:1fr 1fr;
+          gap:2rem;
+          align-items:center;
+        ">
+        <!-- Left side: your UPI‑Switch diagram + labels -->
+        <div style="text-align:center;">
+          <img src="images/test.png" alt="UPI Switch Flow" style="max-width:100%; height:auto; margin-bottom:1rem;">
+        </div>
+        <!-- Right side: one big circle container -->
+        <div style="position:relative; width:350px; height:350px; margin:auto;">
+          <!-- dashed circle -->
+          <div style="
+            position:absolute; top:0; left:0;
+            width:100%; height:100%;
+            border:4px dashed rgba(255,255,255,0.5);
+            border-radius:50%;
+          "></div>
+          <!-- UPI‑Switch GIF centered -->
+          <img src="images/upi-switch.gif" alt="UPI Switch Animation" style="
+            position:absolute;
+            top:50%; left:50%;
+            width:360px; height:360px;
+            transform:translate(-50%,-50%);
+          ">
+          <!-- NPCI badge “sticker” -->
+          <img src="images/npci_certified.png" alt="NPCI Certified" style="
+            position:absolute;
+            width:80px;
+            bottom:-10px;
+            right:-10px;
+            transform:rotate(-5deg);
+            box-shadow:0 2px 6px rgba(0,0,0,0.3);
+          ">
+        </div>
+      </div>
+    </section>
+    <!-- /.text-feature-six -->
+
+    <!-- =====================================================
+			About GenCash Section
+		===================================================== -->
+    <div class="text-feature-seven mt-170 lg-mt-80 snap-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-last wow fadeInRight">
+            <div class="ps-xl-5 ms-xxl-4">
+              <div class="title-three mb-35 md-mb-20 shiny">
+                <div class="upper-title">GenCash</div>
+                <h2>At GenCash, we redefine the way India transacts</h2>
+              </div>
+              <!-- /.title-three -->
+              <p class="text-lg mb-40 lg-mb-30">
+                Providing comprehensive financial services for the inclusive and sustainable growth of individuals, SMEs,
+                and enterprises nationwide.
+              </p>
+              <ul class="style-none">
+                <li>✔ Benefits to Co‑operative Banks</li>
+                <li>✔ Point of Sale (POS) Terminals</li>
+                <li>✔ KYC solutions</li>
+                <li>✔ Marketing and Outreach</li>
+                <li>✔ API Integration Solutions</li>
+                <li>✔ Payout Connected Banking</li>
+                <li>✔ Soundbox Machines</li>
+                <li>✔ UPI QR solutions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-8 m-auto wow fadeInLeft">
+            <div class="media-wrapper md-mt-60">
+              <img src="images/lazy.svg" data-src="images/assets/screen_15.png" alt="" class="lazy-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.text-feature-seven -->
+
+    <!-- =====================================================
+			Why Choose GenCash Section
+		===================================================== -->
+    <div class="text-feature-nine position-relative mt-180 lg-mt-80 snap-section">
+      <div class="container">
+        <div class="position-relative">
+          <div class="row">
+            <div class="col-lg-6 wow fadeInLeft">
+              <div class="pt-110 lg-pt-80 pb-300 xl-pb-200 md-pb-50 pe-xxl-5">
+                <div class="title-two mb-30 shiny">
+                  <h2 class="text-white">Why Choose <span>GenCash?</span></h2>
+                </div>
+                <!-- /.title-two -->
+                <p class="text-lg text-white opacity-75 mb-50 lg-mb-30">
+                  Building trust and delivering excellence in digital payments.
+                </p>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="block mt-30">
+                      <img src="images/lazy.svg" data-src="images/icon/icon_46.svg" alt="" class="lazy-img icon">
+                      <h4 class="fw-500 text-white mt-35 lg-mt-30 mb-25">100+ People Trust GenCash</h4>
+                      <p class="text-white opacity-75">A growing community relies on our secure payment solutions daily.</p>
+                    </div>
+                    <!-- /.block -->
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="block mt-30">
+                      <img src="images/lazy.svg" data-src="images/icon/icon_47.svg" alt="" class="lazy-img icon">
+                      <h4 class="fw-500 text-white mt-35 lg-mt-30 mb-25">100+ 5‑Star Reviews</h4>
+                      <p class="text-white opacity-75">Consistently rated excellent by our satisfied customers.</p>
+                    </div>
+                    <!-- /.block -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vertical-text-wrapper">
+        <div class="text-list"><span>Trust</span></div>
+        <div class="text-list"><span>Security</span></div>
+        <div class="text-list"><span>Reliability</span></div>
+        <div class="text-list"><span>Innovation</span></div>
+        <div class="text-list"><span>Growth</span></div>
+        <img src="images/lazy.svg" data-src="images/shape/shape_17.svg" alt="" class="lazy-img shapes shape_01">
+        <img src="images/lazy.svg" data-src="images/shape/shape_18.svg" alt="" class="lazy-img shapes shape_02">
+      </div>
+      <!-- /.vertical-text-wrapper -->
+      <img src="images/lazy.svg" data-src="images/shape/shape_18.svg" alt="" class="lazy-img shapes shape_03">
+      <img src="images/lazy.svg" data-src="images/assets/screen_17.png" alt="" class="lazy-img shapes shape_04">
+    </div>
+    <!-- /.text-feature-nine -->
+
+    <!-- =============================================
+        Clientele Section
+    ============================================== -->
+    <!-- ================================
+     Clientele Section
+================================ -->
+  <section id="clientele" class="snap-section feedback-section-four mt-180 lg-mt-80 pb-90">
+    <div class="text-center title-two shiny">
+      <h2>Clientele</h2>
+      <p class="text-gray-600">Our Trusted Partners</p>
+    </div>
+
+    <!-- Slider wrapper -->
+    <div class="partner-logo-one relative overflow-hidden py-16 pt-90">
+      <div class="partner-slider-one flex">
+        <!-- Slide 1 -->
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/IDFC-logo-website.svg" alt="IDFC First Bank" class="partner-logo mx-auto">
+        </div>
+        <!-- Slide 2 -->
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/Kotak_Mahindra_Group_logo.svg" alt="Kotak Mahindra" class="partner-logo mx-auto">
+        </div>
+        <!-- Slide 3 -->
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/Sab-Paisa-small.png" alt="SabPaisa" class="partner-logo mx-auto" style="padding-top:20px;">
+        </div>
+        <!-- Slide 4 -->
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/phonepe_logo.svg" alt="PhonePe" class="partner-logo mx-auto">
+        </div>
+        <!-- Duplicate items to fill seamless loop -->
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/IDFC-logo-website.svg" alt="IDFC First Bank" class="partner-logo mx-auto">
+        </div>
+        <div class="item flex-shrink-0 px-6" style="width: 180px;">
+          <img src="images/Kotak_Mahindra_Group_logo.svg" alt="Kotak Mahindra" class="partner-logo mx-auto">
+        </div>
+        <!-- …add more duplicates as needed… -->
+      </div>
+    </div>
+  </section>
+
+<!-- INLINE STYLES -->
+<style>
+  .partner-logo-one {
+    /* full width, hide only the overflow */
+    width: 100%;
+  }
+  .partner-slider-one .item {
+    overflow: hidden;           /* clip when scaling */
+    position: relative;
+  }
+  .partner-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  .partner-logo:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+<!-- SLICK + GSAP (if you want hover pop) -->
+<script>
+  $(function(){
+    $('.partner-slider-one').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 4500,
+      cssEase: 'linear',
+      arrows: false,
+      pauseOnHover: true,
+      swipe: false
+    });
+
+    // GSAP hover pop (optional)
+    if (window.gsap) {
+      gsap.utils.toArray('.partner-logo').forEach(logo => {
+        logo.addEventListener('mouseenter', () => gsap.to(logo, { scale: 1.1, duration: 0.3 }));
+        logo.addEventListener('mouseleave', () => gsap.to(logo, { scale: 1.0, duration: 0.3 }));
+      });
+    }
+  });
+</script>
+
+  <!-- /.partner-section-one -->
+
+    <!-- =============================================
+			Testimonials Section
+		============================================== -->
+    <div class="feedback-section-four mt-180 lg-mt-80 snap-section" id="testimonials">
+      <div class="container">
+        <div class="position-relative">
+          <div class="title-two shiny">
+            <h2>Testimonial</h2>
+          </div>
+          <!-- /.title-two -->
+          <p class="text-lg mt-30 lg-mt-20 mb-50 lg-mb-40">
+            At GenCash, we redefine the way India transacts, providing comprehensive financial services for the inclusive
+            and sustainable growth of individuals, SMEs, and enterprises nationwide.
+          </p>
+          <div class="feedback-slider-four">
+            <div class="item">
+              <div class="feedback-block-four tran3s">
+                <div class="d-flex align-items-center justify-content-between">
+                  <ul class="style-none d-flex rating">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                  </ul>
+                  <img src="images/icon/icon_48.svg" alt="" class="icon">
+                </div>
+                <blockquote>
+                  “At GenCash, we’re not just facilitating payments—we’re driving financial inclusion and growth across India.”
+                </blockquote>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="name fw-500 text-dark">Shubham Gupta,</div>
+                    <p class="m0 opacity-75">Founder</p>
+                  </div>
+                  <img src="images/media/img_08.jpg" alt="" class="avatar rounded-circle">
+                </div>
+              </div>
+              <!-- /.feedback-block-four -->
+            </div>
+
+            <div class="item">
+              <div class="feedback-block-four tran3s">
+                <div class="d-flex align-items-center justify-content-between">
+                  <ul class="style-none d-flex rating">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                  </ul>
+                  <img src="images/icon/icon_48.svg" alt="" class="icon">
+                </div>
+                <blockquote>
+                  “Optimize expense tracking across platforms &amp; product lines using multiple cards—it’s never been easier.”
+                </blockquote>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="name fw-500 text-dark">Ravi Kumar,</div>
+                    <p class="m0 opacity-75">Operations Head</p>
+                  </div>
+                  <img src="images/media/img_14.jpg" alt="" class="avatar rounded-circle">
+                </div>
+              </div>
+              <!-- /.feedback-block-four -->
+            </div>
+    
+            <div class="item">
+              <div class="feedback-block-four tran3s">
+                <div class="d-flex align-items-center justify-content-between">
+                  <ul class="style-none d-flex rating">
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                    <li><i class="bi bi-star-fill"></i></li>
+                  </ul>
+                  <img src="images/icon/icon_48.svg" alt="" class="icon">
+                </div>
+                <blockquote>
+                  “GenCash’s seamless API integrations and intuitive dashboards have transformed our business operations.”
+                </blockquote>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center">
+                    <div class="name fw-500 text-dark">Ananya Roy,</div>
+                    <p class="m0 opacity-75">CTO, TechStart</p>
+                  </div>
+                  <img src="images/media/img_15.jpg" alt="" class="avatar rounded-circle">
+                </div>
+              </div>
+              <!-- /.feedback-block-four -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- <div class="partner-logo-one pt-80 lg-pt-50 pb-80 lg-pb-50">
+      <div class="container">
+        <div class="partner-slider-one d-flex align-items-center justify-content-center">
+          <div class="item mx-3">
+            <div class="logo"><img src="images/IDFC-logo-website.svg" alt="IDFC First Bank" class="img-fluid"></div>
+          </div>
+          <div class="item mx-3">
+            <div class="logo"><img src="images/Kotak_Mahindra_Group_logo.svg" alt="Kotak" class="img-fluid"></div>
+          </div>
+          <div class="item mx-3">
+            <div class="logo"><img src="images/Suryodaylogo_1_1_a157d376fe.svg" alt="Suryoday" class="img-fluid"></div>
+          </div>
+          <div class="item mx-3">
+            <div class="logo"><img src="images/Sab-Paisa-small.svg" alt="SabPaisa" class="img-fluid"></div>
+          </div>
+          <div class="item mx-3">
+            <div class="logo"><img src="images/phonepe_logo.svg" alt="PhonePe" class="img-fluid"></div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+    
+		<!-- /.feedback-section-four -->
+
+
+
+		<!--
+		=====================================================
+			BLock Feature Three
+		=====================================================
+		-->
+		
+		<!-- /.block-feature-three -->
+
+
+    <div class="partner-logo-one pt-80 lg-pt-50 pb-200 lg-pb-50" >
+  <div class="partner-slider-one" style=" animation:marquee 20s linear infinite;"  >
+    <!-- <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/IDFC-logo-website.svg" alt=""></div>
+    </div>
+    <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/Kotak_Mahindra_Group_logo.svg" alt=""></div>
+    </div>
+    <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/Sab-Paisa-small.png" alt=""></div>
+    </div>
+    <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/phonepe_logo.svg" alt=""></div>
+    </div> -->
+    <!-- <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/2.png" alt=""></div>
+    </div>
+    <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/4.png" alt=""></div>
+    </div>
+    <div class="item">
+      <div class="logo d-flex align-items-center justify-content-center"><img src="images/5.png" alt=""></div>
+    </div> -->
+  </div>
+</div>
+
+		<!--
+
+		=====================================================
+			Footer
+		=====================================================
+		-->
+		<div class="footer-large-wrapper position-relative">
+      <div class="footer-four">
+        <div class="container">
+          <div class="inner-wrapper">
+            <div class="row justify-content-between">
+              <div class="col-lg-4 footer-intro mb-40">
+                <div class="logo mb-25">
+                  <a href="index.html">
+                    <img src="images/gc-logo.png" alt="GenCash Logo">
+                  </a>
+                </div>
+                <!-- logo -->
+                <p class="mb-55 md-mb-30">
+                  123 Fintech Avenue, Mumbai, India<br>
+                  Licensed in 28 states.
+                </p>
+                <ul class="style-none">
+                  <li class="d-flex align-items-center">
+                    <img src="images/icon/icon_49.svg" alt="email icon" class="icon me-3">
+                    <a href="mailto:support@gencash.com">support@gencash.com</a>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <img src="images/icon/icon_50.svg" alt="phone icon" class="icon me-3">
+                    <a href="tel:+919876543210">+91 98765 43210</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-sm-4 mb-20">
+                <h5 class="footer-title">Links</h5>
+                <ul class="footer-nav-link style-none">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#benefits">Benefits</a></li>
+                  <li><a href="#kyc">KYC</a></li>
+                  <li><a href="#testimonials">Testimonials</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-sm-4 mb-20">
+                <h5 class="footer-title">Company</h5>
+                <ul class="footer-nav-link style-none">
+                  <li><a href="about-us.html">About Us</a></li>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="careers.html">Careers</a></li>
+                  <li><a href="press.html">Press</a></li>
+                </ul>
+              </div>
+              <div class="col-xxl-2 col-lg-3 col-sm-4 mb-20">
+                <h5 class="footer-title">Support</h5>
+                <ul class="footer-nav-link style-none">
+                  <li><a href="terms.html">Terms of Use</a></li>
+                  <li><a href="privacy.html">Privacy Policy</a></li>
+                  <li><a href="cookies.html">Cookie Policy</a></li>
+                  <li><a href="help.html">Help Center</a></li>
+                </ul>
+              </div>
+            </div>
+          </div> <!-- /.inner-wrapper -->
+        </div>
+        <div class="container">
+          <div class="bottom-footer">
+            <div class="row">
+              <div class="col-xl-4 col-lg-3 order-lg-3 mb-15">
+                <ul class="style-none d-flex align-items-center justify-content-center justify-content-lg-end social-icon">
+                  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-lg-6 order-lg-2 mb-15">
+                <ul class="style-none bottom-nav d-flex justify-content-center order-lg-last">
+                  <li><a href="privacy.html">Privacy & Terms</a></li>
+                  <li><a href="cookies.html">Cookies</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-lg-3 order-lg-1 mb-15">
+                <div class="copyright text-center text-lg-start order-lg-first">
+                  © 2025 GenCash – All Rights Reserved.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.bottom-footer -->
+        </div>
+      </div> <!-- /.footer-four -->
+    </div>
+    
+
+
+    
+		<!-- Modal -->
+      
+
+
+		<button class="scroll-top">
+			<i class="bi bi-arrow-up-short"></i>
+		</button>
+
+
+
+
+		<!-- Optional JavaScript _____________________________  -->
+
+		<!-- jQuery first, then Bootstrap JS -->
+		<!-- jQuery -->
+		<script src="vendor/jquery.min.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- WOW js -->
+		<script src="vendor/wow/wow.min.js"></script>
+		<!-- Slick Slider -->
+		<script src="vendor/slick/slick.min.js"></script>
+		<!-- Fancybox -->
+		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<!-- Lazy -->
+		<script src="vendor/jquery.lazy.min.js"></script>
+		<!-- js Counter -->
+		<script src="vendor/jquery.counterup.min.js"></script>
+		<script src="vendor/jquery.waypoints.min.js"></script>
+    <script>
+      (function() {
+        const section = document.getElementById('services');
+        const spacer = section.querySelector('.services-spacer');
+        const track = section.querySelector('.services-track');
+        const card = section.querySelector('.card-wrapper');
+
+        window.addEventListener('load', () => {
+          const cardWidth = card.offsetWidth;
+          const cardCount = section.querySelectorAll('.card-wrapper').length;
+          const gap = 24; // must match CSS gap
+          const totalWidth = cardCount * cardWidth + (cardCount - 1) * gap;
+          const viewport = window.innerWidth;
+          const scrollLen = totalWidth - viewport;
+
+          // Give enough vertical scroll room
+          spacer.style.height = (scrollLen + window.innerHeight) + 'px';
+
+          window.addEventListener('scroll', () => {
+            const start = section.offsetTop;
+            const y = window.pageYOffset;
+            if (y >= start && y <= start + scrollLen) {
+              track.style.transform = `translateX(${- (y - start)}px)`;
+            } else if (y < start) {
+              track.style.transform = 'translateX(0)';
+            } else {
+              track.style.transform = `translateX(${-scrollLen}px)`;
+            }
+          });
+        });
+      })();
+    </script>
+		<script>
+      $(document).ready(function(){
+        // Slick infinite carousel (continuous)
+        $('.partner-slider-one').slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 0,
+          speed: 5000,
+          cssEase: 'linear',
+          arrows: false,
+          pauseOnHover: true
+        });
+
+        // Pause marquee animation on hover container
+        $('.partner-logo-one').hover(
+          () => $('.partner-slider-one').css('animation-play-state','paused'),
+          () => $('.partner-slider-one').css('animation-play-state','running')
+        );
+
+        // GSAP hover “pop” (fallback/enhancement)
+        gsap.utils.toArray('.partner-logo').forEach((logo) => {
+          logo.addEventListener('mouseenter', () => {
+            gsap.to(logo, { scale: 1.2, duration: 0.3 });
+          });
+          logo.addEventListener('mouseleave', () => {
+            gsap.to(logo, { scale: 1.0, duration: 0.3 });
+          });
+        });
+      });
+    </script>
+		<!-- validator js -->
+		<script src="vendor/validator.js"></script>
+
+		<!-- Theme js -->
+		<script src="js/theme.js"></script>
+
+    <script>
+          (function() {
+            const track = document.getElementById('services-track');
+            let pos = 0, dir = 1;
+            function step() {
+              pos += dir;
+              // bounce back at ends
+              if (pos <= 0 || pos >= track.scrollWidth - track.clientWidth) dir *= -1;
+              track.scrollLeft = pos;
+              requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+          })();
+        </script>
+	</div> <!-- /.main-page-wrapper -->
+</body>
+
+</html>
