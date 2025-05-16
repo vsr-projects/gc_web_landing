@@ -551,10 +551,6 @@
   .team-section-three .section-btn {position: relative; width: 100%; text-align: center; top:0;}
   .feedback-section-one .title-one {position: relative;}
   .block-feature-two .border-line {border: 1px dashed #cacaca; border-left: none; border-right: none;}
-  .feedback-section-four .slick-list {width: 100% !important; padding: 0 !important;}
-  .feedback-block-four { width: 100% !important;}
-  .feedback-block-four + .feedback-block-four { margin-left: 0; }
-  .footer-four .logo img { margin-top: 20px; }
   .feedback-section-one .icon {bottom: auto; top:10px;}
   .hero-banner-two .hero-heading {font-size: 40px; line-height: 1.12em;}
   .hero-banner-two .shape_03,.hero-banner-two .shape_04,.feedback-section-six .shape_01,

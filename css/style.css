@@ -7876,7 +7876,7 @@ iframe {
   width: 100%;
   right: 0;
   bottom: 0;
-  top: -20%;
+  top: 0%;
   background: url(../images/assets/bg_04.svg) no-repeat center bottom;
   background-size: cover;
   z-index: -1;
