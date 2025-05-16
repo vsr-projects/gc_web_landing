@@ -124,54 +124,79 @@
       }
       @keyframes shine-sweep { to { left: 125%; } }
 
-      /* constrain to 3 cards */
+      /* Services Section - Desktop */
       .services-track-wrapper {
-        overflow-x: hidden; /* hide beyond 3 cards */
+        overflow-x: hidden;
         position: relative;
       }
       .services-track {
         display: flex;
         gap: 1.5rem;
         animation: services-auto-scroll 8s linear infinite;
+        flex-wrap: nowrap; /* Prevent wrapping on desktop */
       }
-      /* Each .col shows its bootstrap width */
       .services-track .col-md-4 {
         flex: 0 0 auto;
-        width: calc((100% - 3rem) / 3); /* show 3 cards exactly, adjust if gap changes */
+        width: calc((100% - 3rem) / 3);
       }
-
-      /* auto-scroll: move left to show cards 4 & 5, then reset */
       @keyframes services-auto-scroll {
         0%   { transform: translateX(0); }
         50%  { transform: translateX(calc(-1 * (100% / 3))); }
         100% { transform: translateX(0); }
       }
 
-      /* — Wrapper hides overflow so only 3 cards show — */
+      /* KYC Section - Desktop */
       .kyc-track-wrapper {
         overflow-x: hidden;
         position: relative;
       }
-
-      /* — Flex-row of all 5 cards, auto-scrolls left & back — */
       .kyc-track {
         display: flex;
-        gap: 1.5rem;              /* matches gx-xxl-5 */
+        gap: 1.5rem;
         animation: kyc-auto-scroll 8s linear infinite;
         flex-wrap: nowrap;
       }
-
-      /* — Force each card to a fixed third of the viewport minus gaps — */
       .kyc-track .col-md-4 {
         flex: 0 0 auto;
-        width: calc((100% - 3rem) / 3); /* 3 cards visible, 2 gaps of 1.5rem */
+        width: calc((100% - 3rem) / 3);
       }
-
-      /* — Auto-scroll keyframes: shift by one card slot then reset — */
       @keyframes kyc-auto-scroll {
         0%   { transform: translateX(0); }
         50%  { transform: translateX(calc(-1 * (100% / 3))); }
         100% { transform: translateX(0); }
+      }
+
+      /* Responsive styles for smaller screens */
+      @media (max-width: 767px) {
+        /* Services Section - Mobile */
+        .services-track {
+          flex-wrap: wrap;
+          animation: none; /* Disable animation on mobile */
+          gap: 1.5rem; /* Ensure consistent gap */
+        }
+        .services-track .col-md-4 {
+          width: 100%; /* Stack cards vertically */
+          margin-bottom: 1.5rem; /* Add space between stacked cards */
+        }
+
+        /* KYC Section - Mobile */
+        .kyc-track {
+          flex-wrap: wrap;
+          animation: none; /* Disable animation on mobile */
+          gap: 1.5rem; /* Ensure consistent gap */
+        }
+        .kyc-track .col-md-4 {
+          width: 100%; /* Stack cards vertically */
+          margin-bottom: 1.5rem; /* Add space between stacked cards */
+        }
+
+        /* Footer - Mobile */
+        .footer-four .inner-wrapper {
+          flex-direction: column;
+          text-align: center;
+        }
+        .footer-four .footer-title { margin-top: 1.5rem; }
+        .footer-four .footer-intro { margin-bottom: 1.5rem; }
       }
   </style>
 
